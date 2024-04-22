@@ -1,0 +1,30 @@
+﻿@model Dictionary<int, List<int>>
+
+@{
+    ViewBag.Title = "Multiplication Table";
+}
+
+<h2>Multiplication Table</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th></th>
+            @for (int i = 1; i <= 10; i++)
+            {
+                <th>@i</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Key</td>
+                @foreach (var value in item.Value)
+                {
+                    <td>@value</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
